@@ -8,11 +8,18 @@ na rede local de forma não invasiva.
 
 ## Comando utilizado
 ```bash
-nmap -sn 192.168.0.0/24
+nmap -Pn 192.168.14.0/24
+
 ## Resultado
-Foram identificados dispositivos ativos na rede local, incluindo
-o computador utilizado nos testes e o roteador.
+Foram identificados múltiplos hosts ativos na rede local.
+Alguns dispositivos apresentaram portas abertas relacionadas
+a serviços de gerenciamento, comunicação e serviços web.
+
+A utilização da opção -Pn permitiu a identificação dos hosts
+mesmo com possíveis bloqueios de ICMP na rede.
 
 ## Considerações de Segurança
-A descoberta de rede permite identificar ativos expostos e é
-uma etapa inicial importante em processos de segurança.
+O bloqueio de ICMP é uma prática comum para reduzir a
+descoberta de ativos por atacantes. No entanto, serviços
+expostos em portas TCP ainda podem ser identificados por
+meio de técnicas alternativas de varredura.
